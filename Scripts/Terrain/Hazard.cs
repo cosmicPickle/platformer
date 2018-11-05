@@ -7,9 +7,11 @@ using UnityEngine;
 public class Hazard : MonoBehaviour
 {
     public LayerMask collisionMask;
-    public float damage;
-    public Vector2 knockbackEffect;
-    public float knockbackDuration = .2f;
+
+    public Stat damage = 10;
+    public Stat knockbackDuration = 0.05f;
+    public Stat knockbackSpeed = 20f;
+
     public bool instakill = false;
 
     BoxCollider2D ctrlCollider;
@@ -54,8 +56,20 @@ public class Hazard : MonoBehaviour
             }
             else
             {
-                print("Ouch");
-                hitbox.Damage(damage, knockbackEffect, 0, knockbackDuration);
+                Controller2D ctrl = hitbox.GetComponent<Controller2D>();
+                Vector2 direction = ctrl == null ? Vector2.right : -ctrl.collisions.faceDir * Vector2.right;
+
+                if(ctrl.transform.position.y < transform.position.y)
+                {
+                    direction.y = -1;
+                }
+
+                hitbox.Damage(damage.GetValue(), new Hitbox.Knockback
+                {
+                    duration = knockbackDuration.GetValue(),
+                    direction = direction,
+                    speed = knockbackSpeed.GetValue()
+                });
             }
         }
     }

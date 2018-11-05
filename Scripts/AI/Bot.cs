@@ -9,19 +9,29 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(FreezeController))]
 public class Bot : MonoBehaviour
 {
+    [Header("Debug Settings")]
+    public bool drawEnemyDetectionRange;
+    public bool drawAttackAgentRange;
+    public bool drawConnectedEnemy;
+
     ActionState currentState = ActionState.Idle;
     enum ActionState { Idle, Patrol, Attack, Follow };
     enum BotType { Friendly, Enemy };
 
+    [Header("General Settings")]
     public LayerMask enemyCollisionMask;
-    public float targetLockRange = 10;
-    public bool chaseOutsidePatrolRadius = true;
     CircularRaycastOrigins raycastOrigins;
 
+    [Header("Idle Settings")]
     public float idleTime = 0.5f;
     float timeToIdleEnd;
 
+    protected Hitbox hitbox;
+    protected Hitbox.Knockback currentKnockback;
+
     protected Vector2 initialPosition;
+
+    [Header("Patrol Settings")]
     public float minPatrolRadius = 5f;
     public float maxPatrolRadius = 15f;
     public float minPatrolTime = 3f;
@@ -31,13 +41,16 @@ public class Bot : MonoBehaviour
     protected float patrolRadius;
     float timeToPatrolEnd;
 
-    public float attackRate = 1f;
+    [Header("Attack Settings")]
+    public float targetLockRange = 10;
+    public bool chaseOutsidePatrolRadius = true;
+
     public DetectionInfo detectionInfo;
     protected float lastAttack;
 
     protected Controller2D controller;
     protected AttackAgent attackAgent;
-    protected FreezeController freezeController;
+    protected FreezeController freezeController; 
 
     void Awake()
     {
@@ -48,7 +61,13 @@ public class Bot : MonoBehaviour
     {
         controller = GetComponent<Controller2D>();
         freezeController = GetComponent<FreezeController>();
+
         attackAgent = GetComponent<AttackAgent>();
+        attackAgent.Init(enemyCollisionMask, controller.collisionMask);
+
+        hitbox = GetComponent<Hitbox>();
+        hitbox.onDamageTaken += OnDamageTaken;
+
 
         detectionInfo = new DetectionInfo();
         detectionInfo.Reset();
@@ -76,16 +95,16 @@ public class Bot : MonoBehaviour
                 {
                     StartAttack();
 
-                    if(Time.time >= lastAttack + attackRate && detectionInfo.selectedEnemy)
+                    if(detectionInfo.selectedEnemy)
                     {
-                        Collider2D[] hits = Physics2D.OverlapCircleAll(raycastOrigins.center, raycastOrigins.radius + attackAgent.attackRange, enemyCollisionMask);
+                        Collider2D[] hits = Physics2D.OverlapCircleAll(raycastOrigins.center, raycastOrigins.radius + attackAgent.range, enemyCollisionMask);
                         
                         for(int i = 0; i < hits.Length; i++)
                         {
                             if(hits[i].gameObject == detectionInfo.selectedEnemy.gameObject)
                             {
                                 lastAttack = Time.time;
-                                attackAgent.Attack(detectionInfo.selectedEnemy, enemyCollisionMask);
+                                attackAgent.Attack(detectionInfo.selectedEnemy.transform);
                             }
                         }
                     }
@@ -96,7 +115,7 @@ public class Bot : MonoBehaviour
 
     protected virtual void OnDrawGizmos()
     {
-        if (freezeController.getFreeze())
+        if (freezeController != null && freezeController.getFreeze())
         {
             return;
         }
@@ -104,7 +123,7 @@ public class Bot : MonoBehaviour
         if (Application.isPlaying)
         {
             DebugExtension.DrawCircle(raycastOrigins.center, new Vector3(0, 0, 1), Color.yellow, raycastOrigins.radius + targetLockRange);
-            DebugExtension.DrawCircle(raycastOrigins.center, new Vector3(0, 0, 1), Color.red, raycastOrigins.radius + attackAgent.attackRange);
+            DebugExtension.DrawCircle(raycastOrigins.center, new Vector3(0, 0, 1), Color.red, raycastOrigins.radius + attackAgent.range);
         }
         if (patrolRadius != 0)
         {
@@ -134,11 +153,7 @@ public class Bot : MonoBehaviour
                 bool rayDrawn = false;
 
                 Collider2D hit = hits[i];
-                Vector2 direction = new Vector2(
-                    hit.transform.position.x - transform.position.x,
-                    hit.transform.position.y - transform.position.y
-                );
-
+                Vector2 direction = hit.transform.position - transform.position;
                 RaycastHit2D obstacle = Physics2D.Raycast(transform.position, direction.normalized, direction.magnitude, controller.collisionMask & ~enemyCollisionMask);
                 
                 if (hit == detectionInfo.selectedEnemy)
@@ -193,7 +208,7 @@ public class Bot : MonoBehaviour
             return;
         }
 
-        if (GetComponent<Hitbox>().GetKnockbackStatus())
+        if (currentKnockback.duration > 0)
         {
             currentState = ActionState.Idle;
             return;
@@ -245,6 +260,11 @@ public class Bot : MonoBehaviour
                 timeToIdleEnd = idleTime;
             }
         }
+    }
+
+    void OnDamageTaken(float amount, Hitbox.Knockback knockback)
+    {
+        currentKnockback = knockback;
     }
 
     protected virtual void UpdateRaycastOrigins()

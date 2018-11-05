@@ -5,17 +5,18 @@ using Random = UnityEngine.Random;
 
 public class WalkerBot : Bot
 {
-
+    [Header("Ability Settings")]
     public bool canJump = true;
     public bool canWallJump = true;
     public bool canDoPerfectSlideJumps = false;
-
     public bool canFallThroughPlatform = true;
 
-    public float maxJumpHeight = 4;
-    public float minJumpHeight = 1;
-    public float timeToJumpApex = .4f;
-    public float moveSpeed = 6;
+    [Header("General Movement Settings")]
+    public Stat maxJumpHeight = 4;
+    public Stat minJumpHeight = 1;
+    public Stat timeToJumpApex = .4f;
+    public Stat moveSpeed = 6;
+
     float accelerationTimeAirborne = .2f;
     float accelerationTimeGrounded = .1f;
 
@@ -23,12 +24,14 @@ public class WalkerBot : Bot
     const float targetPositionMarginY = 0.25f;
     Vector2 targetPosition;
 
+    [Header("Wall Movement Settings")]
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
     public Vector2 wallLeap;
 
     public float wallSlideSpeedMax = 3;
     public float wallStickTme = .25f;
+
     float timeToWallUnstick;
 
     float gravity;
@@ -69,7 +72,7 @@ public class WalkerBot : Bot
         targetPosition = detectionInfo.selectedEnemy.transform.position;
         directionalInput.x = targetPosition.x < transform.position.x ? -1 : 1;
 
-        targetPosition += -directionalInput * Vector2.right * attackAgent.attackRange;
+        targetPosition += -directionalInput * Vector2.right * attackAgent.range;
         directionalInput.x = targetPosition.x < transform.position.x ? -1 : 1;
 
         TraverseTerrain(targetPosition);
@@ -125,6 +128,7 @@ public class WalkerBot : Bot
         CalculateVelocity();
         HandleWallSliding();
 
+       
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
         if (controller.collisions.above || controller.collisions.below)
@@ -224,6 +228,31 @@ public class WalkerBot : Bot
     void CalculateVelocity()
     {
         float targetVelocityX = directionalInput.x * moveSpeed;
+
+        if (currentKnockback.duration > 0)
+        {
+            if (currentKnockback.direction.x == 0)
+            {
+                currentKnockback.direction.x = -controller.collisions.faceDir;
+            }
+
+            float dirX = Mathf.Sign(currentKnockback.direction.x);
+            float angle = -dirX * Hitbox.Knockback.Angle * Mathf.Deg2Rad;
+            float cos = Mathf.Cos(angle);
+            float sin = Mathf.Sin(angle);
+            Vector2 baseDirection = dirX * Vector2.right * currentKnockback.speed;
+
+            Vector2 targetVelocity = new Vector2(baseDirection.x * cos + baseDirection.y * sin, -baseDirection.x * sin + baseDirection.y * cos);
+            targetVelocityX = targetVelocity.x;
+            velocity.y = targetVelocity.y;
+
+            currentKnockback.duration -= Time.deltaTime;
+        }
+        else
+        {
+            currentKnockback.duration = 0;
+        }
+
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
         velocity.y += gravity * Time.deltaTime;
     }
@@ -237,6 +266,7 @@ public class WalkerBot : Bot
             target.y + targetPositionMarginY > transform.position.y
         )
         {
+            velocity.x = 0;
             //We have arrived
             return;
         }

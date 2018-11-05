@@ -5,52 +5,56 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Bullet : MonoBehaviour
 {
-    [HideInInspector]
-    public float damage;
-    [HideInInspector]
-    public Vector2 knockbackEffect;
-    [HideInInspector]
-    public float knockbackDuration;
 
-    protected Vector2 velocity;
-    protected Collider2D ctrlCollider;
+    Vector2 velocity;
+    Collider2D ctrlCollider;
     RaycastOrigins raycastOrigins;
 
-    public LayerMask obstacleMask;
-    LayerMask targetMask;
     LayerMask compoundMask;
 
-    Vector2 initialPosition;
-    float bulletRange;
+    ShooterAttackAgent attackAgent;
+    float trackDurationLeft;
 
     void Start()
     {
         ctrlCollider = GetComponent<Collider2D>();
     }
 
-    public void Shoot(Vector2 direction, float speed, float range, LayerMask collisionMask)
+    public void Shoot(ShooterAttackAgent newAttackAgent)
     {
-        velocity = direction * speed;
-        compoundMask = obstacleMask | collisionMask;
-        targetMask = collisionMask;
-        initialPosition = transform.position;
-        bulletRange = range;
+        attackAgent = newAttackAgent;
+        Vector2 direction = (attackAgent.target.position - attackAgent.transform.position).normalized;
+
+        if(attackAgent.trackType == ShooterAttackAgent.TrackType.None)
+        {
+            direction.y = 0;
+        }
+        else if (attackAgent.trackType == ShooterAttackAgent.TrackType.Track)
+        {
+            trackDurationLeft = attackAgent.trackDuration;
+        }
+
+        velocity = attackAgent.bulletSpeed * direction;
+        compoundMask = newAttackAgent.obstacleMask | newAttackAgent.enemyMask;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveDistance = Mathf.Sqrt(
-            Mathf.Pow(transform.position.x - initialPosition.x, 2) + 
-            Mathf.Pow(transform.position.y - initialPosition.y, 2)
-        );
+        float moveDistance = Vector2.Distance(attackAgent.transform.position, transform.position);
 
-        if(moveDistance >= bulletRange)
+        if(moveDistance >= attackAgent.range)
         {
             Destroy(gameObject);
             return;
         }
 
+        if (attackAgent.trackType == ShooterAttackAgent.TrackType.Track && trackDurationLeft > 0)
+        {
+            trackDurationLeft -= Time.deltaTime;
+            velocity = attackAgent.bulletSpeed * (attackAgent.target.position - attackAgent.transform.position).normalized;
+        }
+        
         Vector2 moveAmount = velocity * Time.deltaTime;
 
         transform.Translate(moveAmount);
@@ -62,13 +66,13 @@ public class Bullet : MonoBehaviour
 
         if(hit)
         {
-            if(targetMask == (targetMask | 1 << hit.collider.gameObject.layer))
+            if(attackAgent.enemyMask == (attackAgent.enemyMask | 1 << hit.collider.gameObject.layer))
             {
                 Hitbox hitbox = hit.collider.GetComponent<Hitbox>();
 
                 if(hitbox)
                 {
-                    hitbox.Damage(damage, knockbackEffect, Mathf.Sign(moveAmount.x), knockbackDuration);
+                    hitbox.Damage(attackAgent);
                 }
             }
             Destroy(gameObject);

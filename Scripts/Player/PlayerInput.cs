@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         //If we are knocked back - read no input
-        if(GetComponent<Hitbox>().GetKnockbackStatus())
+        if(player.currentKnockback.duration > 0)
         {
             player.SetDirectionalInput(Vector2.zero);
             return;
@@ -29,12 +29,23 @@ public class PlayerInput : MonoBehaviour
         {
             player.OnJumpInputDown();
         }
+
+        if (Input.GetButton("Jump"))
+        {
+            player.OnGlide();
+        }
+
         if (Input.GetButtonUp("Jump"))
         {
             player.OnJumpInputUp();
         }
 
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Dash"))
+        {
+            player.OnDash();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
         {
             player.OnAttack();
         }

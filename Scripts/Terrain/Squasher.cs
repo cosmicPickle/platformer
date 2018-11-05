@@ -14,7 +14,7 @@ public class Squasher : RaycastController
     public float retractSpeed = 2f;
 
     public float damageRangeAroundTarget = 0.5f;
-    public float damage = 50;
+    public Stat damage;
     public bool instakill = true;
 
     bool retracting;
@@ -100,7 +100,6 @@ public class Squasher : RaycastController
                 Debug.DrawRay(rayOrigin, dirY * Vector2.up * rayLength, Color.red);
                 if (hit)
                 {
-                    
 
                     Controller2D hitCtrl = hit.collider.GetComponent<Controller2D>();
                     if (hitCtrl)
@@ -120,7 +119,7 @@ public class Squasher : RaycastController
                             }
                             else
                             {
-                                hitbox.Damage(damage, Vector2.zero, moveAmount.x, 0);
+                                hitbox.Damage(damage.GetValue(), new Hitbox.Knockback());
                             }
                         }
 
@@ -166,7 +165,7 @@ public class Squasher : RaycastController
                                 hitbox.Die();
                             } else
                             {
-                                hitbox.Damage(damage, Vector2.zero, moveAmount.x, 0);
+                                hitbox.Damage(damage.GetValue(), new Hitbox.Knockback());
                             } 
                         }
 
