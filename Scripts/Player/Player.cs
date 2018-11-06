@@ -192,7 +192,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(!wallSliding && !controller.collisions.below && jumpCount < maxNumberOfAirJumps)
+        if(!wallSliding && !controller.collisions.below && !controller.collisions.left && !controller.collisions.right && jumpCount < maxNumberOfAirJumps)
         {
             velocity.y = maxJumpVelocity;
             jumpCount++;
