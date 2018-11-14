@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class MeleeAttackAgent : AttackAgent
 {
+    [Header("MeleeAttackAgent Settings")]
+    public bool autoTarget = false;
 
+    public float attackWidth = 1f;
     public AttackDirection attackDirection;
-    AttackArea attackArea = new AttackArea();
+    AttackType attackType = new AttackType();
+
+
+    public void Attack(AttackType type)
+    {
+        attackType = type;
+        base.Attack();
+    }
+
+    public void Attack(Transform target, AttackType type)
+    {
+        attackType = type;
+        base.Attack(target);
+    }
+
 
     protected override void Update()
     {
@@ -15,15 +32,6 @@ public class MeleeAttackAgent : AttackAgent
         if (isAttacking)
         {
             RecalculateAttackArea();
-
-            Vector2[] positions = new[] { attackArea.leadingPoing, attackArea.trailingPoint };
-            List<float> metrics = new List<float> { attackArea.size.x, attackArea.size.y };
-            string layer = LayerMask.LayerToName(gameObject.layer);
-
-            //Telegrams.TelegramType type = layer == "Player" || layer == "Friendly" ? Telegrams.TelegramType.Friendly : Telegrams.TelegramType.Hostile;
-
-            //Telegrams.instance.DrawRetangle("Attack_" + gameObject.GetInstanceID(), positions.Centroid(), type, metrics);
-
             Collider2D[] hits = Physics2D.OverlapAreaAll(attackArea.leadingPoing, attackArea.trailingPoint, enemyMask);
 
             for (int i = 0; i < hits.Length; i++)
@@ -45,10 +53,6 @@ public class MeleeAttackAgent : AttackAgent
                 }
             }
         }
-        else
-        {
-           // Telegrams.instance.Hide("Attack_" + gameObject.GetInstanceID());
-        }
     }
 
     protected override void OnAttack()
@@ -56,18 +60,36 @@ public class MeleeAttackAgent : AttackAgent
         RecalculateAttackArea();
     }
 
-    void RecalculateAttackArea()
+    protected override void RecalculateAttackArea()
     {
         Vector2 fDir = Vector2.zero;
-        if (!target)
-            fDir = controller.collisions.faceDir * Vector2.right;
-        else 
-            fDir = -Mathf.Sign(transform.position.x - target.position.x) * Vector2.right;
 
-        Vector2 fDirNormalLeft = Vector2.Perpendicular(fDir);
-        Vector2 fDirNormalRight = -fDirNormalLeft;
-        Vector2 bottomRight = (Vector2)transform.position + fDir * controller.ctrlCollider.size / 2 + Vector2.up * range / 2;
-        Vector2 topLeft = bottomRight + fDir * range - Vector2.up * range;
+        if (attackType == AttackType.Default)
+        {
+            if (!target || !autoTarget)
+                fDir = controller.collisions.faceDir * Vector2.right;
+            else
+                fDir = -Mathf.Sign(transform.position.x - target.position.x) * Vector2.right;
+        } else 
+        {
+            fDir = (attackType == AttackType.Above) ? Vector2.up : -Vector2.up;
+        }
+
+        Vector2 fDirNormal = Vector2.Perpendicular(fDir);
+        Vector2 directionModifier = fDirNormal * fDir.x;
+        if (directionModifier == Vector2.zero)
+            directionModifier = fDirNormal * fDir.y;
+
+
+        Vector2 localScale = new Vector2(Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y));
+        Vector2 absFDir = new Vector2(Mathf.Abs(fDir.x), Mathf.Abs(fDir.y));
+
+        Vector2 bottomRight = (Vector2)transform.position 
+            + fDir * controller.ctrlCollider.size / 2 * localScale 
+            + controller.ctrlCollider.offset * localScale 
+            + directionModifier * attackWidth / 2;
+
+        Vector2 topLeft = bottomRight + fDir * range - directionModifier * attackWidth;
         attackArea.size = new Vector2(
             Mathf.Abs(topLeft.x - bottomRight.x),
             Mathf.Abs(topLeft.y - bottomRight.y)
@@ -79,8 +101,8 @@ public class MeleeAttackAgent : AttackAgent
                 attackArea.leadingPoing = topLeft;
                 attackArea.trailingPoint = bottomRight;
                 break;
-            case AttackDirection.LeftToRight:
-                attackArea.leadingPoing = topLeft - fDir * range + fDirNormalRight * range * (1 - timeToAttackComplete / attackDuration);
+            case AttackDirection.BottomToTop:
+                attackArea.leadingPoing = topLeft - fDir * range + directionModifier * attackWidth * (1 - timeToAttackComplete / attackDuration);
                 attackArea.trailingPoint = topLeft;
 
                 if (fDir.x != 0)
@@ -93,8 +115,8 @@ public class MeleeAttackAgent : AttackAgent
                 }
 
                 break;
-            case AttackDirection.RightToLeft:
-                attackArea.leadingPoing = bottomRight + fDirNormalLeft * range * (1 - timeToAttackComplete / attackDuration);
+            case AttackDirection.TopToBottom:
+                attackArea.leadingPoing = bottomRight - directionModifier * attackWidth * (1 - timeToAttackComplete / attackDuration);
                 attackArea.trailingPoint = bottomRight + fDir * range;
 
                 if (fDir.x != 0)
@@ -108,7 +130,7 @@ public class MeleeAttackAgent : AttackAgent
 
                 break;
             case AttackDirection.Outward:
-                attackArea.leadingPoing = topLeft - fDir * range + fDir * range * (1 - timeToAttackComplete / attackDuration);
+                attackArea.leadingPoing = topLeft - fDir * attackWidth + fDir * range * (1 - timeToAttackComplete / attackDuration);
                 attackArea.trailingPoint = bottomRight;
 
                 if (fDir.x != 0)
@@ -122,37 +144,24 @@ public class MeleeAttackAgent : AttackAgent
                 break;
         }
 
-
-
-    }
-
-    void OnDrawGizmos()
-    {
-        if (isAttacking)
+        if(onRecalculateAttackArea != null)
         {
-            Gizmos.color = Color.green;
-            Vector2 p1 = new Vector2(attackArea.leadingPoing.x, attackArea.trailingPoint.y);
-            Vector2 p2 = new Vector2(attackArea.trailingPoint.x, attackArea.leadingPoing.y);
-
-            Gizmos.DrawLine(attackArea.leadingPoing, p1);
-            Gizmos.DrawLine(p1, attackArea.trailingPoint);
-            Gizmos.DrawLine(attackArea.trailingPoint, p2);
-            Gizmos.DrawLine(p2, attackArea.leadingPoing);
+            onRecalculateAttackArea(attackArea);
         }
     }
 
     public enum AttackDirection
     {
         Static,
-        LeftToRight,
-        RightToLeft,
+        BottomToTop,
+        TopToBottom,
         Outward
     }
 
-    struct AttackArea
+    public enum AttackType
     {
-        public Vector2 leadingPoing;
-        public Vector2 trailingPoint;
-        public Vector2 size;
+        Default,
+        Above,
+        Below
     }
 }

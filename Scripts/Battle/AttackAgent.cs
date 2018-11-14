@@ -6,23 +6,26 @@ using UnityEngine;
 public class AttackAgent : MonoBehaviour
 {
 
+    [Header("General Settings")]
     public float range;
 
-    public Stat attack;
-    public Stat knockback;
-    public Stat knockbackSpeed;
+    public Stat attack = 5;
+    public Stat knockback = 0.05f;
+    public Stat knockbackSpeed = 30;
 
-    public Stat attackRate;
-    public float attackDuration;
+    public Stat attackRate = 1;
+    public float attackDuration = 0.2f;
 
     public LayerMask enemyMask { get; protected set; }
     public LayerMask obstacleMask { get; protected set; }
 
     public delegate void OnAttackStart();
     public delegate void OnAttackComplete();
+    public delegate void OnRecalculateAttackArea(AttackArea attackArea);
 
     public OnAttackStart onAttackStart;
     public OnAttackComplete onAttackComplete;
+    public OnRecalculateAttackArea onRecalculateAttackArea;
 
     protected float timeToNextAttack;
     protected float timeToAttackComplete;
@@ -32,12 +35,15 @@ public class AttackAgent : MonoBehaviour
     protected List<Collider2D> hitTargets;
     protected Controller2D controller;
 
+    protected AttackArea attackArea = new AttackArea();
+    
+
     void Awake()
     {
         controller = GetComponent<Controller2D>();
     }
 
-    public void Init(LayerMask enemies, LayerMask obstacles)
+    public virtual void Init(LayerMask enemies, LayerMask obstacles)
     {
         enemyMask = enemies;
         obstacleMask = obstacles;
@@ -73,6 +79,11 @@ public class AttackAgent : MonoBehaviour
         }
     }
 
+    public List<Collider2D> GetHitTargets()
+    {
+        return hitTargets;
+    }
+
     public void Attack()
     {
         Attack(null);
@@ -105,5 +116,32 @@ public class AttackAgent : MonoBehaviour
     protected virtual void OnAttack()
     {
 
+    }
+
+    protected virtual void RecalculateAttackArea()
+    {
+
+    }
+
+    protected virtual void OnDrawGizmos()
+    {
+        if (isAttacking)
+        {
+            Gizmos.color = Color.green;
+            Vector2 p1 = new Vector2(attackArea.leadingPoing.x, attackArea.trailingPoint.y);
+            Vector2 p2 = new Vector2(attackArea.trailingPoint.x, attackArea.leadingPoing.y);
+
+            Gizmos.DrawLine(attackArea.leadingPoing, p1);
+            Gizmos.DrawLine(p1, attackArea.trailingPoint);
+            Gizmos.DrawLine(attackArea.trailingPoint, p2);
+            Gizmos.DrawLine(p2, attackArea.leadingPoing);
+        }
+    }
+
+    public struct AttackArea
+    {
+        public Vector2 leadingPoing;
+        public Vector2 trailingPoint;
+        public Vector2 size;
     }
 }

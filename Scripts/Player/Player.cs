@@ -4,7 +4,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent (typeof(Controller2D))]
-[RequireComponent (typeof(AttackAgent))]
+[RequireComponent (typeof(MeleeAttackAgent))]
+[RequireComponent(typeof(ExtendedAttackAgent))]
 [RequireComponent(typeof(Hitbox))]
 public class Player : MonoBehaviour
 {
@@ -53,17 +54,20 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     float velocityXSmoothing;
 
-    Controller2D controller;
-    Hitbox hitbox;
+    [HideInInspector]
+    public Controller2D controller;
     [HideInInspector]
     public Hitbox.Knockback currentKnockback;
+    Hitbox hitbox;
 
     Vector2 directionalInput;
     bool wallSliding;
     int wallDirX;
 
     [HideInInspector]
-    public AttackAgent attackAgent;
+    public MeleeAttackAgent lightAttack;
+    [HideInInspector]
+    public ExtendedAttackAgent heavyAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -72,8 +76,11 @@ public class Player : MonoBehaviour
         hitbox = GetComponent<Hitbox>();
         hitbox.onDamageTaken += OnDamageTaken;
 
-        attackAgent = GetComponent<AttackAgent>();
-        attackAgent.Init(enemyCollisionMask, controller.collisionMask);
+        lightAttack = GetComponent<MeleeAttackAgent>();
+        lightAttack.Init(enemyCollisionMask, controller.collisionMask);
+
+        heavyAttack = GetComponent<ExtendedAttackAgent>();
+        heavyAttack.Init(enemyCollisionMask, controller.collisionMask);
 
         RecalculateMovementSettings();
     }
@@ -84,7 +91,7 @@ public class Player : MonoBehaviour
         CalculateVelocity();
         HandleWallSliding();
 
-        controller.Move(velocity * Time.deltaTime, directionalInput);
+        controller.Move(velocity * Time.deltaTime, directionalInput, false);
 
         if (controller.collisions.above || controller.collisions.below)
         {
@@ -111,7 +118,6 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
-        print("Gravity: " + gravity + " Jump Velocity: " + maxJumpVelocity);
     }
 
 
@@ -126,6 +132,7 @@ public class Player : MonoBehaviour
         {
             dashReset = false;
             dashDurationLeft = dashDuration;
+            hitbox.Invulnerable(true);
         }
     }
 
@@ -212,22 +219,42 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnAttack()
+    public void OnHeavyAttack()
     {
         if (dashDurationLeft > 0)
             return;
 
         float boundsSizeX = controller.ctrlCollider.bounds.size.x / 2;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, boundsSizeX + attackAgent.range, enemyCollisionMask);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, boundsSizeX + heavyAttack.range, enemyCollisionMask);
 
         if (hits.Length > 0)
         {
             Collider2D hit = hits[Random.Range(0, hits.Length)];
-            attackAgent.Attack(hit.transform);
+            heavyAttack.Attack(hit.transform);
+        }
+        else
+        {
+            heavyAttack.Attack();
+        }
+    }
+
+    public void OnLightAttack(MeleeAttackAgent.AttackType attackType)
+    {
+        if (dashDurationLeft > 0)
+            return;
+
+        float boundsSizeX = controller.ctrlCollider.bounds.size.x / 2;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, boundsSizeX + lightAttack.range, enemyCollisionMask);
+
+        if (hits.Length > 0)
+        {
+            Collider2D hit = hits[Random.Range(0, hits.Length)];
+            lightAttack.Attack(hit.transform, attackType);
         } else
         {
-            attackAgent.Attack();
+            lightAttack.Attack(attackType);
         }
         
     }
@@ -307,7 +334,7 @@ public class Player : MonoBehaviour
                 velocity.x = dashSpeed * controller.collisions.faceDir;
                 dashing = true;
             }  
-        }
+        } 
 
         if(!dashing)
         {
@@ -315,6 +342,7 @@ public class Player : MonoBehaviour
             {
                 dashCooldownLeft = dashCooldown;
                 dashReset = true;
+                hitbox.Invulnerable(false);
             } else
             {
                 if(dashCooldownLeft >= 0)

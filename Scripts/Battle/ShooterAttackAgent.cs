@@ -5,8 +5,11 @@ using UnityEngine;
 public class ShooterAttackAgent : AttackAgent
 {
     public enum TrackType { None, Directional, Track}
+
+    [Header("ShooterAttackAgent Settings")]
     public TrackType trackType;
     public float trackDuration = 0.8f;
+
     public GameObject bullet;
     public float bulletSpeed = 2;
 

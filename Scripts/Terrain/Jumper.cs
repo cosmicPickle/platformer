@@ -8,19 +8,19 @@ public class Jumper : MonoBehaviour {
     public float jumpHeight = 8;
     public LayerMask playerMask;
 
-    Collider2D collider;
+    Collider2D ctrlCollider;
     ContactFilter2D filter = new ContactFilter2D();
 
     private void Start()
     {
-        collider = GetComponent<Collider2D>();
+        ctrlCollider = GetComponent<Collider2D>();
         filter.layerMask = playerMask;
     }
 
     private void Update()
     {
         Collider2D[] results = new Collider2D[5];
-        collider.OverlapCollider(filter, results);
+        ctrlCollider.OverlapCollider(filter, results);
 
         for (int i = 0; i < results.Length; i++) {
 

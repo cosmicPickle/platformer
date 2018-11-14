@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Controller2D))]
 public class Hitbox : MonoBehaviour
 {
     public float maxHealthPoints = 100;
@@ -13,13 +12,24 @@ public class Hitbox : MonoBehaviour
     bool invulnerable;
     float invulnerableTimeLeft = 0;
 
+    bool forcedInvulnerable;
+
+    bool frozen = false;
+
     public delegate void OnDamageTaken(float amount, Knockback knockback);
     public OnDamageTaken onDamageTaken;
+
+    Knockback currentKnockback;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealthPoints = maxHealthPoints;
+    }
+
+    bool GetFrozen()
+    {
+        return frozen;
     }
 
     // Update is called once per frame
@@ -36,14 +46,14 @@ public class Hitbox : MonoBehaviour
 
     public void Damage(AttackAgent attackAgent)
     {
-        if (invulnerable)
+        if (invulnerable || forcedInvulnerable)
         {
             return;
         }
 
         DoDamage(attackAgent.attack);
 
-        Knockback currentKnockback = new Knockback();
+        currentKnockback = new Knockback();
         if (attackAgent.knockback > 0)
         {
 
@@ -52,7 +62,12 @@ public class Hitbox : MonoBehaviour
             currentKnockback.speed = attackAgent.knockbackSpeed;
         }
 
-        if(onDamageTaken != null)
+        if (currentKnockback.duration > 0)
+        {
+            frozen = true;
+        }
+
+        if (onDamageTaken != null)
         {
             onDamageTaken(attackAgent.attack, currentKnockback);
         }
@@ -61,12 +76,19 @@ public class Hitbox : MonoBehaviour
 
     public void Damage(float amount, Knockback knockback)
     {
-        if (invulnerable)
+        if (invulnerable || forcedInvulnerable)
         {
             return;
         }
 
         DoDamage(amount);
+
+        currentKnockback = knockback;
+
+        if(knockback.duration > 0)
+        {
+            frozen = true;
+        }
         onDamageTaken(amount, knockback);
     }
 
@@ -92,7 +114,7 @@ public class Hitbox : MonoBehaviour
 
     public void Invulnerable(bool status)
     {
-        invulnerable = status;
+        forcedInvulnerable = status;
     }
 
     public struct Knockback

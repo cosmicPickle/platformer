@@ -84,7 +84,6 @@ public class FallingPlatform : RaycastController
 
     void Reset()
     {
-        print("Called Reset");
         triggerFall = false;
         triggerReset = false;
         timeLeftToFall = stableTime;

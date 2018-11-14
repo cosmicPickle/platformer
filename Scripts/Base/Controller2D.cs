@@ -17,7 +17,7 @@ public class Controller2D : RaycastController
     public override void Start()
     {
         base.Start();
-        collisions.faceDir = 1;
+        ChangeFaceDir(1);
     }
 
     public void Move(Vector2 moveAmount, bool standingOnPlatform)
@@ -36,10 +36,10 @@ public class Controller2D : RaycastController
         {
             DescendSlope(ref moveAmount);
         }
-
-        if (moveAmount.x != 0)
+        
+        if (playerInput.x != 0)
         {
-            collisions.faceDir = (int)Mathf.Sign(moveAmount.x);
+            ChangeFaceDir((int)Mathf.Sign(playerInput.x));
         }
 
         HorizontalCollisions(ref moveAmount);
@@ -266,6 +266,16 @@ public class Controller2D : RaycastController
     void ResetFallingThroughPlatform()
     {
         collisions.fallingThroughPlatform = false;
+    }
+
+    public void ChangeFaceDir(int dir)
+    {
+        collisions.faceDir = dir;
+
+        Vector3 localScale = transform.localScale;
+        localScale.x = Mathf.Sign(dir) * Mathf.Abs(localScale.x);
+
+        transform.localScale = localScale;
     }
 
     public struct CollisionInfo

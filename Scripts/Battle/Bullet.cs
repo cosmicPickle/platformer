@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
         }
 
         velocity = attackAgent.bulletSpeed * direction;
-        compoundMask = newAttackAgent.obstacleMask | newAttackAgent.enemyMask;
+        compoundMask = attackAgent.obstacleMask | attackAgent.enemyMask;
     }
 
     // Update is called once per frame

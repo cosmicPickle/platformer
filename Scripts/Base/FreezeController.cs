@@ -15,6 +15,9 @@ public class FreezeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playerObject)
+            return;
+
         float distanceToPlayer = Vector2.Distance(transform.position, playerObject.transform.position);
         if(distanceToPlayer >= unfreezeDistance)
         {
