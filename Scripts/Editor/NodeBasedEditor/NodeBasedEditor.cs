@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class NodeBasedEditor : EditorWindow
 {
+    public delegate void OnDataChange();
+    public OnDataChange onDataChange;
+
     private List<Node> nodes;
     private List<Connection> connections;
 
@@ -19,6 +22,19 @@ public class NodeBasedEditor : EditorWindow
     private Vector2 drag;
     private static Texture2D tex;
 
+    private DataGraph data;
+
+    public void SetData(ref DataGraph newData)
+    {
+        data = newData;
+        GenerateNodesFromData();
+    }
+
+    public void ClearData()
+    {
+        data = null;
+        ClearCanvas();
+    }
 
     [MenuItem("Window/Node Based Editor")]
     private static void OpenWindow()
@@ -51,15 +67,29 @@ public class NodeBasedEditor : EditorWindow
         tex.SetPixel(0, 0, new Color(0.27f, 0.27f, 0.27f));
         tex.Apply();
 
-       
     }
 
     private void OnGUI()
     {
+        if (tex == null)
+        {
+            tex = new Texture2D(1, 1, TextureFormat.RGBA32, false);
+            tex.SetPixel(0, 0, new Color(0.27f, 0.27f, 0.27f));
+            tex.Apply();
+        }
+
         GUI.DrawTexture(new Rect(0, 0, maxSize.x, maxSize.y), tex, ScaleMode.StretchToFill);
 
         DrawGrid(20, 0.2f, Color.gray);
         DrawGrid(100, 0.4f, Color.gray);
+
+        if(!data)
+        {
+            GUILayout.Label("No DataGraph selected.", EditorStyles.boldLabel);
+        } else
+        {
+            GUILayout.Label("Editing DataGraph: " + data.name, EditorStyles.boldLabel);
+        }
 
         DrawNodes();
         DrawConnections();
@@ -70,6 +100,46 @@ public class NodeBasedEditor : EditorWindow
         ProcessEvents(Event.current);
 
         if (GUI.changed) Repaint();
+    }
+
+    private void GenerateNodesFromData()
+    {
+        Dictionary<DataGraphNode, Node> nodeMap = new Dictionary<DataGraphNode, Node>();
+
+        data.nodes.ForEach((DataGraphNode n) =>
+        {
+            nodeMap.Add(n, OnClickAddNode(n.uiSettings.rect.position, n));
+        });
+
+        Debug.Log(nodeMap.ToString());
+
+        if (nodes != null)
+        {
+            nodes.ForEach((Node n) =>
+            {
+                List<DataGraphNode> dataNodeConnections = data.GetNodeConnections(n.dataNode);
+
+                dataNodeConnections.ForEach((DataGraphNode c) =>
+                {
+                    if(connections == null)
+                    {
+                        connections = new List<Connection>();
+                    }
+
+                    connections.Add(new Connection(
+                        nodeMap[c].inPoint,
+                        n.outPoint,
+                        OnClickRemoveConnection
+                    ));
+                });
+            });
+        }
+    }
+
+    private void ClearCanvas()
+    {
+        nodes = null;
+        connections = null;
     }
 
     private void DrawConnections()
@@ -185,6 +255,11 @@ public class NodeBasedEditor : EditorWindow
                 if (guiChanged)
                 {
                     GUI.changed = true;
+
+                    if (onDataChange != null)
+                    {
+                        onDataChange();
+                    }
                 }
             }
         }
@@ -197,14 +272,48 @@ public class NodeBasedEditor : EditorWindow
         genericMenu.ShowAsContext();
     }
 
-    private void OnClickAddNode(Vector2 mousePosition)
+
+    private Node OnClickAddNode(Vector2 mousePosition, DataGraphNode dataNode = null)
     {
+        if (data == null)
+        {
+            return null;
+        }
+
         if (nodes == null)
         {
             nodes = new List<Node>();
         }
+        
+        DataGraphNode dataGraphNode = dataNode != null ? dataNode : new DataGraphNode();
 
-        nodes.Add(new Node(mousePosition, 200, 50, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode));
+        Node newNode = new Node(
+            mousePosition,
+            200,
+            50,
+            nodeStyle,
+            selectedNodeStyle,
+            inPointStyle,
+            outPointStyle,
+            OnClickInPoint,
+            OnClickOutPoint,
+            OnClickRemoveNode,
+            dataGraphNode
+        );
+
+        if (dataNode == null)
+        {
+            data.AddNode(dataGraphNode);
+
+            if (onDataChange != null)
+            {
+                onDataChange();
+            }
+        }
+
+        nodes.Add(newNode);
+
+        return newNode;
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
@@ -245,6 +354,13 @@ public class NodeBasedEditor : EditorWindow
     private void OnClickRemoveConnection(Connection connection)
     {
         connections.Remove(connection);
+
+        data.RemoveEdge(connection.outPoint.node.dataNode, connection.inPoint.node.dataNode);
+
+        if (onDataChange != null)
+        {
+            onDataChange();
+        }
     }
 
     private void OnDrag(Vector2 delta)
@@ -259,6 +375,11 @@ public class NodeBasedEditor : EditorWindow
             }
         }
 
+        if (onDataChange != null)
+        {
+            onDataChange();
+        }
+
         GUI.changed = true;
     }
 
@@ -270,6 +391,12 @@ public class NodeBasedEditor : EditorWindow
         }
 
         connections.Add(new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection));
+        data.AddEdge(selectedOutPoint.node.dataNode, selectedInPoint.node.dataNode);
+
+        if (onDataChange != null)
+        {
+            onDataChange();
+        }
     }
 
     private void ClearConnectionSelection()
@@ -298,6 +425,12 @@ public class NodeBasedEditor : EditorWindow
             }
 
             connectionsToRemove = null;
+        }
+
+        data.RemoveNode(node.dataNode);
+        if (onDataChange != null)
+        {
+            onDataChange();
         }
 
         nodes.Remove(node);

@@ -18,6 +18,8 @@ public class Node
 
     public Action<Node> OnRemoveNode;
 
+    public DataGraphNode dataNode;
+
     public Node(
         Vector2 position, 
         float width, float 
@@ -28,7 +30,8 @@ public class Node
         GUIStyle outPointStyle,
         Action<ConnectionPoint> OnClickInPoint,
         Action<ConnectionPoint> OnClickOutPoint,
-        Action<Node> OnClickRemoveNode
+        Action<Node> OnClickRemoveNode,
+        DataGraphNode newDataNode
     )
     {
         rect = new Rect(position.x, position.y, width, height);
@@ -38,6 +41,16 @@ public class Node
         defaultNodeStyle = nodeStyle;
         selectedNodeStyle = selectedStyle;
         OnRemoveNode = OnClickRemoveNode;
+
+        dataNode = newDataNode;
+
+        if(dataNode.uiSettings != null)
+        {
+            rect = dataNode.uiSettings.rect;
+        } else
+        {
+            dataNode.SetUIRect(rect);
+        }
     }
 
     public void Drag(Vector2 delta)
@@ -49,7 +62,9 @@ public class Node
     {
         inPoint.Draw();
         outPoint.Draw();
+
         GUI.Box(rect, title, style);
+        dataNode.SetUIRect(rect);
     }
 
     public bool ProcessEvents(Event e)
