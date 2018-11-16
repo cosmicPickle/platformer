@@ -82,7 +82,6 @@ public class MeleeAttackAgent : AttackAgent
 
 
         Vector2 localScale = new Vector2(Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y));
-        Vector2 absFDir = new Vector2(Mathf.Abs(fDir.x), Mathf.Abs(fDir.y));
 
         Vector2 bottomRight = (Vector2)transform.position 
             + fDir * controller.ctrlCollider.size / 2 * localScale 

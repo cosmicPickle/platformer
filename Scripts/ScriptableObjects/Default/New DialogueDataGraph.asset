@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4895858704c7e4a8ce21317ac339cd, type: 3}
+  m_Name: New DialogueDataGraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 114359454182018436}
+  - {fileID: 114084418337446362}
+  - {fileID: 114178087421680450}
+  - {fileID: 114242185463519396}
+  - {fileID: 114337863798923384}
+  - {fileID: 114701529423728136}
+  nodeChildren:
+  - list:
+    - {fileID: 114084418337446362}
+    - {fileID: 114178087421680450}
+  - list:
+    - {fileID: 114242185463519396}
+    - {fileID: 114337863798923384}
+  - list: []
+  - list:
+    - {fileID: 114701529423728136}
+  - list: []
+  - list: []
+--- !u!114 &114084418337446362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 801faafc-7f8e-40b5-82e3-2b96b0b19a14
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 77
+      width: 300
+      height: 115
+  type: 1
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Would you like to browse my stock, my lord?
+--- !u!114 &114178087421680450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 957fe797-1b17-4416-bc7e-f1537ffd9cce
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 580
+      y: 80
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: I don't serve commoners.
+--- !u!114 &114242185463519396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 81cba908-60e5-4c1e-8d85-375a7841048f
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 109
+      y: 339
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Show me what you've got.
+--- !u!114 &114337863798923384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 93bbd2c4-5f25-4f74-8691-d9787ce2033d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 461
+      y: 342
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: No, Goodbye.
+--- !u!114 &114359454182018436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: a9bc4439-dc33-4d74-ba69-b5f2f8ca98e6
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 392
+      y: -120
+      width: 300
+      height: 115
+  type: 3
+  condition: 0
+  itemId: I1234555
+  questStageId: 
+  text: This is a test.
+--- !u!114 &114701529423728136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: f299f9b9-ca51-4faf-987e-0740f9f6503a
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 109
+      y: 537
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Right this way.

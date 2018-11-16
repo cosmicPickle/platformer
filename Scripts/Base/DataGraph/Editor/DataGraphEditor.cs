@@ -1,24 +1,32 @@
 ﻿using System;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 [CustomEditor(typeof(DataGraph))]
 public class DataGraphEditor : Editor {
 
     protected string openNodeEditorText = "Open Node Editor";
     protected string closeNodeEditorText = "Close Node Editor";
-    protected string saveChangesText = "Save Changes";
+    protected string assetPath;
 
     protected DataGraph dataGraph;
     protected NodeBasedEditor nodeBasedEditor;
 
     protected const float saveAssetsInterval = 15f;
     protected double lastSave;
-    protected bool isDirty;
 
     private void OnEnable()
     {
         dataGraph = (DataGraph)target;
+        assetPath = AssetDatabase.GetAssetPath(dataGraph);
+        
+        if(assetPath.Length > 0)
+        {
+            assetPath = Path.GetDirectoryName(assetPath);
+        }
+
+        OnNodeEditorDataChange();
     }
 
     public override void OnInspectorGUI()
@@ -29,13 +37,14 @@ public class DataGraphEditor : Editor {
         {
             if (nodeBasedEditor == null)
             {
-                nodeBasedEditor = EditorWindow.GetWindow<NodeBasedEditor>();
+                nodeBasedEditor = BindNodeEditorWindow();
                 nodeBasedEditor.onDataChange -= OnNodeEditorDataChange;
                 nodeBasedEditor.onDataChange += OnNodeEditorDataChange;
             }
 
             nodeBasedEditor.Show();
-            nodeBasedEditor.SetData(ref dataGraph);
+            nodeBasedEditor.ClearData();
+            nodeBasedEditor.SetData(ref dataGraph, OnCreateDataNode, OnRemoveDataNode, OnCreateDataEdge, OnRemoveDataEdge);
             nodeBasedEditor.Repaint();
         }
 
@@ -43,7 +52,7 @@ public class DataGraphEditor : Editor {
         {
             if (nodeBasedEditor == null)
             {
-                nodeBasedEditor = EditorWindow.GetWindow<NodeBasedEditor>();
+                nodeBasedEditor = BindNodeEditorWindow();
                 nodeBasedEditor.onDataChange -= OnNodeEditorDataChange;
                 nodeBasedEditor.onDataChange += OnNodeEditorDataChange;
             }
@@ -54,17 +63,16 @@ public class DataGraphEditor : Editor {
             nodeBasedEditor = null;
         }
 
-        EditorGUI.BeginDisabledGroup(!isDirty);
-        if (GUILayout.Button(saveChangesText))
-        {
-            Save();
-        }
-        EditorGUI.EndDisabledGroup();
+        OnNodeEditorDataChange();
+    }
+
+    protected virtual NodeBasedEditor BindNodeEditorWindow()
+    {
+        return EditorWindow.GetWindow<NodeBasedEditor>();  
     }
 
     protected virtual void OnNodeEditorDataChange() {
         EditorUtility.SetDirty(target);
-        isDirty = true;
 
         if (lastSave + saveAssetsInterval <= EditorApplication.timeSinceStartup)
         {
@@ -77,6 +85,41 @@ public class DataGraphEditor : Editor {
         lastSave = EditorApplication.timeSinceStartup;
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        isDirty = false;
+    }
+
+    protected virtual DataGraphNode OnCreateDataNode()
+    {
+        DataGraphNode newNode = CreateInstance<DataGraphNode>();
+
+        AssetDatabase.AddObjectToAsset(newNode, assetPath + Path.DirectorySeparatorChar + dataGraph.name + ".asset");
+
+        newNode.uiSettings = null;
+
+        dataGraph.AddNode(newNode);
+        OnNodeEditorDataChange();
+
+        Debug.Log(newNode.uiSettings);
+
+        return newNode;
+    }
+
+    protected virtual void OnRemoveDataNode(DataGraphNode node)
+    {
+        dataGraph.RemoveNode(node);
+        DestroyImmediate(node, true);
+
+        OnNodeEditorDataChange();
+    }
+
+    protected virtual void OnCreateDataEdge(Connection connection)
+    {
+        dataGraph.AddEdge(connection.outPoint.node.dataNode, connection.inPoint.node.dataNode);
+        OnNodeEditorDataChange();
+    }
+
+    protected virtual void OnRemoveDataEdge(Connection connection)
+    {
+        dataGraph.RemoveEdge(connection.outPoint.node.dataNode, connection.inPoint.node.dataNode);
+        OnNodeEditorDataChange();
     }
 }
