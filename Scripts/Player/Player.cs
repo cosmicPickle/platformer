@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     float velocityXSmoothing;
 
+    [Header("Interactable Settings")]
+    public float interactableDetectDistance = 2f;
+    public LayerMask interactableMask;
+    Interactable focus;
+
     [HideInInspector]
     public Controller2D controller;
     [HideInInspector]
@@ -217,6 +222,68 @@ public class Player : MonoBehaviour
         {
             gliding = false;
         }
+    }
+
+    public bool OnInteract()
+    {
+        Collider2D hit = FindClosestInteractable();
+        if (hit)
+        {
+            Interactable interactable = hit.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                SetInteractableFocus(interactable);
+                return true;
+            }
+        }
+
+        RemoveInteractableFocus();
+        return false;
+    }
+
+    Collider2D FindClosestInteractable()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactableDetectDistance, interactableMask);
+
+        float minSqrtDistance = float.MaxValue;
+        Collider2D target = null;
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            float distance = (transform.position - colliders[i].transform.position).magnitude;
+
+            if (distance < minSqrtDistance)
+            {
+                minSqrtDistance = distance;
+                target = colliders[i];
+            }
+        }
+
+        return target;
+    }
+
+    void SetInteractableFocus(Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
+            if (focus != null)
+            {
+                focus.onDefocused();
+            }
+
+            focus = newFocus;
+        }
+
+        focus.OnFocused(transform);
+    }
+
+    void RemoveInteractableFocus()
+    {
+        if (focus != null)
+        {
+            focus.onDefocused();
+        }
+        focus = null;
     }
 
     public void OnHeavyAttack()

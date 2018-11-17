@@ -114,7 +114,12 @@ public class Node
         return false;
     }
 
-    public virtual bool IsConnectionAllowed(Node other)
+    public virtual bool IsConnectionAllowed(Node other, bool isNewConnection = false)
+    {
+        return true;
+    }
+
+    public virtual bool IsNodeAllowed(bool isNewNode = false)
     {
         return true;
     }

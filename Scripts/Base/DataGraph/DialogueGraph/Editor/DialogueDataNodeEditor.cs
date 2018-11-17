@@ -13,13 +13,15 @@ public class DialogueDataNodeEditor : Editor
 
         dNode.type = (DialogueDataNode.Type)EditorGUILayout.EnumPopup(dNode.type);
 
-        if (dNode.type != DialogueDataNode.Type.Condition)
+        if (dNode.type != DialogueDataNode.Type.Condition 
+            && dNode.type != DialogueDataNode.Type.StartDialogue 
+            && dNode.type != DialogueDataNode.Type.EndDialogue)
         {
             EditorGUILayout.LabelField("Text");
             dNode.text = EditorGUILayout.TextArea(dNode.text);
         }
 
-        if (dNode.type == DialogueDataNode.Type.Condition)
+        if (dNode.type == DialogueDataNode.Type.Condition || dNode.type == DialogueDataNode.Type.Answer)
         {
             EditorGUILayout.LabelField("Condition");
             dNode.condition = (DialogueDataNode.Condition)EditorGUILayout.EnumPopup(dNode.condition);

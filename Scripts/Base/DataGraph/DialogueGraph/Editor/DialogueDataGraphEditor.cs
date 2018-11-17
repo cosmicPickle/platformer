@@ -19,11 +19,31 @@ public class DialogueDataGraphEditor : DataGraphEditor
 
         newNode.uiSettings = null;
 
-        dataGraph.AddNode(newNode);
-        OnNodeEditorDataChange();
+        int result = dataGraph.AddNode(newNode);
 
-        Debug.Log(newNode.uiSettings);
+        if (result >= 0)
+        {
+            OnNodeEditorDataChange();
+            return newNode;
+        }
 
-        return newNode;
+        return null;
+    }
+
+    protected override void OnNodeEditorDataChange()
+    {
+        DialogueDataGraph dialogueGraph = (DialogueDataGraph)dataGraph;
+
+        dialogueGraph.nodes.ForEach(node =>
+        {
+            DialogueDataNode dialogueDataNode = (DialogueDataNode)node;
+
+            if(dialogueDataNode.type == DialogueDataNode.Type.StartDialogue && dialogueGraph.startDialogue == null)
+            {
+                dialogueGraph.startDialogue = dialogueDataNode;
+            }
+        });
+
+        base.OnNodeEditorDataChange();
     }
 }

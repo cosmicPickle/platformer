@@ -4,4 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New DialogueDataGraph", menuName = "DataGraph/Dialogue", order = 1)]
 [Serializable]
-public class DialogueDataGraph : DataGraph { }
+public class DialogueDataGraph : DataGraph {
+
+    [SerializeField]
+    public DialogueDataNode startDialogue;
+
+}

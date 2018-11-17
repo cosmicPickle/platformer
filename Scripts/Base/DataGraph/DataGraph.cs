@@ -26,7 +26,7 @@ public class DataGraph : ScriptableObject
         nodeChildren = new List<DataGraphNodeConnection>();
     }
 
-    public int AddNode(DataGraphNode n)
+    public virtual int AddNode(DataGraphNode n)
     {
         int index = nodes.IndexOf(n);
 

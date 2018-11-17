@@ -58,21 +58,24 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
 
-            MeleeAttackAgent.AttackType attackType = MeleeAttackAgent.AttackType.Default;
-
-            if (directionalInput.y > 0)
+            if (!player.OnInteract())
             {
-                attackType = MeleeAttackAgent.AttackType.Above;
+                MeleeAttackAgent.AttackType attackType = MeleeAttackAgent.AttackType.Default;
+
+                if (directionalInput.y > 0)
+                {
+                    attackType = MeleeAttackAgent.AttackType.Above;
+                }
+                else if (directionalInput.y < 0
+                        && !player.controller.collisions.below
+                        && !player.controller.collisions.left
+                        && !player.controller.collisions.right)
+                {
+                    attackType = MeleeAttackAgent.AttackType.Below;
+                }
+
+                player.OnLightAttack(attackType);
             }
-            else if (directionalInput.y < 0
-                    && !player.controller.collisions.below
-                    && !player.controller.collisions.left
-                    && !player.controller.collisions.right)
-            {
-                attackType = MeleeAttackAgent.AttackType.Below;
-            } 
-
-            player.OnLightAttack(attackType);
         }
 
         if (Input.GetButtonDown("Fire2"))

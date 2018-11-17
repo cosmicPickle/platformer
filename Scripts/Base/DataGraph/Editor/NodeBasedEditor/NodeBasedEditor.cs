@@ -167,9 +167,19 @@ public class NodeBasedEditor : EditorWindow
     {
         if (connections != null)
         {
+            List<Connection> invalidConnections = new List<Connection>();
             for (int i = 0; i < connections.Count; i++)
             {
+                if (!connections[i].outPoint.node.IsConnectionAllowed(connections[i].inPoint.node))
+                {
+                    invalidConnections.Add(connections[i]);
+                    continue;
+                }
                 connections[i].Draw();
+            }
+
+            for (int i = 0; i < invalidConnections.Count; i++) {
+                OnClickRemoveConnection(invalidConnections[i]);
             }
         }
     }
@@ -178,9 +188,20 @@ public class NodeBasedEditor : EditorWindow
     {
         if (nodes != null)
         {
+            List<Node> invalidNodes = new List<Node>();
             for (int i = 0; i < nodes.Count; i++)
             {
+                if(!nodes[i].IsNodeAllowed())
+                {
+                    invalidNodes.Add(nodes[i]);
+                    continue;
+                }
                 nodes[i].Draw();
+            }
+
+            for (int i = 0; i < invalidNodes.Count; i++)
+            {
+                OnClickRemoveNode(invalidNodes[i]);
             }
         }
     }
@@ -307,11 +328,19 @@ public class NodeBasedEditor : EditorWindow
         }
         
         DataGraphNode dataGraphNode = dataNode != null ? dataNode : OnCreateDataNode();
-        Node newNode = BindNode(mousePosition, dataGraphNode);
 
-        nodes.Add(newNode);
+        if (dataGraphNode != null)
+        {
+            Node newNode = BindNode(mousePosition, dataGraphNode);
 
-        return newNode;
+            if (newNode.IsNodeAllowed(true))
+            {
+                nodes.Add(newNode);
+                return newNode;
+            }
+        }
+
+        return null;
     }
 
     protected virtual void OnClickInPoint(ConnectionPoint inPoint)
@@ -382,7 +411,7 @@ public class NodeBasedEditor : EditorWindow
             connections = new List<Connection>();
         }
 
-        if (selectedOutPoint.node.IsConnectionAllowed(selectedInPoint.node))
+        if (selectedOutPoint.node.IsConnectionAllowed(selectedInPoint.node, true))
         {
             Connection conn = new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection);
             connections.Add(conn);

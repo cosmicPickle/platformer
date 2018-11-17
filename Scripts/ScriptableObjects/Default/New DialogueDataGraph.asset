@@ -12,25 +12,89 @@ MonoBehaviour:
   m_Name: New DialogueDataGraph
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 114359454182018436}
-  - {fileID: 114084418337446362}
-  - {fileID: 114178087421680450}
-  - {fileID: 114242185463519396}
-  - {fileID: 114337863798923384}
-  - {fileID: 114701529423728136}
+  - {fileID: 114586905291894620}
+  - {fileID: 114971480287495548}
+  - {fileID: 114142632352741388}
+  - {fileID: 114198202031436182}
+  - {fileID: 114057809625676808}
+  - {fileID: 114179731147540096}
+  - {fileID: 114054495164990916}
+  - {fileID: 114685074876835306}
+  - {fileID: 114838025832043362}
+  - {fileID: 114206666487159784}
+  - {fileID: 114051511175303498}
+  - {fileID: 114679158311475872}
+  - {fileID: 114306223295042906}
+  - {fileID: 114915456779985142}
+  - {fileID: 114099448825265536}
+  - {fileID: 114181311839255976}
+  - {fileID: 114227773523275222}
+  - {fileID: 114455479695119532}
+  - {fileID: 114517451959377650}
+  - {fileID: 114340345403254528}
+  - {fileID: 114584940997616456}
+  - {fileID: 114613621082472860}
+  - {fileID: 114850210087227356}
+  - {fileID: 114536683964686820}
+  - {fileID: 114018613603819496}
+  - {fileID: 114699559456555310}
   nodeChildren:
   - list:
-    - {fileID: 114084418337446362}
-    - {fileID: 114178087421680450}
+    - {fileID: 114971480287495548}
   - list:
-    - {fileID: 114242185463519396}
-    - {fileID: 114337863798923384}
+    - {fileID: 114142632352741388}
+  - list:
+    - {fileID: 114198202031436182}
+    - {fileID: 114179731147540096}
+  - list:
+    - {fileID: 114838025832043362}
   - list: []
   - list:
-    - {fileID: 114701529423728136}
+    - {fileID: 114054495164990916}
+  - list:
+    - {fileID: 114685074876835306}
   - list: []
+  - list:
+    - {fileID: 114206666487159784}
+    - {fileID: 114051511175303498}
+    - {fileID: 114679158311475872}
+  - list:
+    - {fileID: 114099448825265536}
+  - list:
+    - {fileID: 114181311839255976}
+  - list:
+    - {fileID: 114227773523275222}
+  - list:
+    - {fileID: 114915456779985142}
   - list: []
---- !u!114 &114084418337446362
+  - list:
+    - {fileID: 114517451959377650}
+    - {fileID: 114340345403254528}
+  - list:
+    - {fileID: 114517451959377650}
+    - {fileID: 114340345403254528}
+  - list:
+    - {fileID: 114517451959377650}
+    - {fileID: 114340345403254528}
+  - list: []
+  - list:
+    - {fileID: 114306223295042906}
+  - list:
+    - {fileID: 114584940997616456}
+  - list:
+    - {fileID: 114850210087227356}
+  - list: []
+  - list:
+    - {fileID: 114536683964686820}
+    - {fileID: 114699559456555310}
+  - list:
+    - {fileID: 114018613603819496}
+  - list:
+    - {fileID: 114915456779985142}
+  - list:
+    - {fileID: 114838025832043362}
+  startDialogue: {fileID: 114586905291894620}
+--- !u!114 &114018613603819496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,20 +105,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 801faafc-7f8e-40b5-82e3-2b96b0b19a14
+  nodeId: 312745b9-0089-4c74-a947-43411729bbcd
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 208
-      y: 77
+      x: 1151
+      y: 1351
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: You won't find better prices anywhere. Come back if you change your mind.
+--- !u!114 &114051511175303498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 19eb3be8-45c2-4f60-a5b0-ebabcabc898f
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1319
+      y: 267
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Silk from the south.
+--- !u!114 &114054495164990916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: eda6755b-1ba2-47bd-8d84-ab15403f7cc0
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1834
+      y: 62
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: As you wish. Farewell.
+--- !u!114 &114057809625676808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: db7f12e5-cc49-4302-b8c5-adf57df2f712
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1262
+      y: -518
+      width: 0
+      height: 0
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114099448825265536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 8852f76c-1ef2-4f9e-a0bc-1e3dca9f5663
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1001
+      y: 485
       width: 300
       height: 115
   type: 1
   condition: 0
   itemId: 
   questStageId: 
-  text: Would you like to browse my stock, my lord?
---- !u!114 &114178087421680450
+  text: That would be 10 gold coins
+--- !u!114 &114142632352741388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,20 +225,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 957fe797-1b17-4416-bc7e-f1537ffd9cce
+  nodeId: e7867cc7-1531-436c-abde-8c884e06e662
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 580
-      y: 80
+      x: 1646
+      y: -325
       width: 300
       height: 115
-  type: 0
+  type: 1
   condition: 0
   itemId: 
   questStageId: 
-  text: I don't serve commoners.
---- !u!114 &114242185463519396
+  text: Can I interest you in some top quality goods.
+--- !u!114 &114179731147540096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,20 +249,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 81cba908-60e5-4c1e-8d85-375a7841048f
+  nodeId: 227c8a59-3e1e-4435-936f-0a6e89322f44
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 109
-      y: 339
+      x: 1830
+      y: -108
       width: 300
       height: 115
   type: 2
   condition: 0
   itemId: 
   questStageId: 
-  text: Show me what you've got.
---- !u!114 &114337863798923384
+  text: Not right now.
+--- !u!114 &114181311839255976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,20 +273,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 93bbd2c4-5f25-4f74-8691-d9787ce2033d
+  nodeId: 3db705a6-0adf-4698-bf33-7906a8af198a
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 461
-      y: 342
+      x: 1329
+      y: 490
+      width: 300
+      height: 115
+  type: 1
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: That would be 12 gold coins.
+--- !u!114 &114198202031436182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: ae7f55eb-4173-4c27-b963-d28df087d12d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1479
+      y: -110
       width: 300
       height: 115
   type: 2
   condition: 0
   itemId: 
   questStageId: 
-  text: No, Goodbye.
---- !u!114 &114359454182018436
+  text: Yes, show me what you've got.
+--- !u!114 &114206666487159784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,20 +321,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: a9bc4439-dc33-4d74-ba69-b5f2f8ca98e6
+  nodeId: 9a4504ee-f63d-41a5-a544-9fe71d7281a8
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 392
-      y: -120
+      x: 1002
+      y: 268
       width: 300
       height: 115
-  type: 3
+  type: 2
   condition: 0
-  itemId: I1234555
+  itemId: 
   questStageId: 
-  text: This is a test.
---- !u!114 &114701529423728136
+  text: Book of Mysteries.
+--- !u!114 &114227773523275222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,16 +345,376 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: f299f9b9-ca51-4faf-987e-0740f9f6503a
+  nodeId: 57a04b3c-d0a5-4fd9-82ef-504aafbd53f9
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 109
-      y: 537
+      x: 1674
+      y: 490
+      width: 300
+      height: 115
+  type: 1
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: That would be 8 silver coins
+--- !u!114 &114306223295042906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 46d2c5fc-cacc-4f6f-afef-09b148ce6e49
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1557
+      y: 891
       width: 300
       height: 115
   type: 0
   condition: 0
   itemId: 
   questStageId: 
-  text: Right this way.
+  text: Here you go. Thank you for your purchase. Farewell.
+--- !u!114 &114340345403254528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: f954a30b-d034-40a5-9da9-1551f308ed27
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1160
+      y: 693
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: That is a bit much for my pocket.
+--- !u!114 &114455479695119532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: b12d50c4-601a-4694-ba26-f147b0b316a1
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 943
+      y: 467
+      width: 0
+      height: 0
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114517451959377650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 527b0a25-8409-4928-ab82-f786565a0fd2
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1548
+      y: 707
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: I'll take it.
+--- !u!114 &114536683964686820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 97aefa36-3a9a-4bbd-8bc8-a8f37b8881a9
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 791
+      y: 1218
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: I am sorry, not right now.
+--- !u!114 &114584940997616456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 32f1d9ba-5c2a-4be1-be81-c76ec0c4c704
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 703
+      y: 842
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 'As you wish. '
+--- !u!114 &114586905291894620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2da44584-f50c-4500-b72c-6909eb33894d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1286
+      y: -507
+      width: 300
+      height: 115
+  type: 4
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114613621082472860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: bba5290f-8261-4888-8ea7-02767a5db897
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -27
+      y: 443
+      width: 0
+      height: 0
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114679158311475872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 4623d3cb-3977-444c-aa35-020dbcf07700
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1669
+      y: 269
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Fake horn of Unicorn.
+--- !u!114 &114685074876835306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 60b6950a-a48a-49c9-8f84-c36e1e372998
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 2020
+      y: 237
+      width: 300
+      height: 115
+  type: 5
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114699559456555310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 8975d05a-d01c-408c-88ff-d24a2b3e3aa4
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 355
+      y: 237
+      width: 300
+      height: 115
+  type: 2
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Yes.
+--- !u!114 &114838025832043362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: edb39cb3-f325-4326-bdc6-7f1f8d3440a3
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1396
+      y: 83
+      width: 300
+      height: 115
+  type: 1
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: What would you like to buy?
+--- !u!114 &114850210087227356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2b499cf0-1ec5-404e-9dbd-fce2fd672601
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 703
+      y: 1014
+      width: 300
+      height: 115
+  type: 1
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Would you like to buy something else?
+--- !u!114 &114915456779985142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 8c8ea996-2912-455b-a20f-62936fe131b3
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1572
+      y: 1490
+      width: 300
+      height: 115
+  type: 5
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: 
+--- !u!114 &114971480287495548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: e8b33f6e-0343-42b9-aafd-251fb704a910
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1289
+      y: -326
+      width: 300
+      height: 115
+  type: 0
+  condition: 0
+  itemId: 
+  questStageId: 
+  text: Greetings, traveler.
