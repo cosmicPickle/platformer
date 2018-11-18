@@ -34,15 +34,18 @@ public class DialogueDataGraphEditor : DataGraphEditor
     {
         DialogueDataGraph dialogueGraph = (DialogueDataGraph)dataGraph;
 
-        dialogueGraph.nodes.ForEach(node =>
+        if (dialogueGraph.nodes.Count > 0)
         {
-            DialogueDataNode dialogueDataNode = (DialogueDataNode)node;
-
-            if(dialogueDataNode.type == DialogueDataNode.Type.StartDialogue && dialogueGraph.startDialogue == null)
+            dialogueGraph.nodes.ForEach(node =>
             {
-                dialogueGraph.startDialogue = dialogueDataNode;
-            }
-        });
+                DialogueDataNode dialogueDataNode = (DialogueDataNode)node;
+
+                if (dialogueDataNode.type == DialogueDataNode.Type.StartDialogue && dialogueGraph.startDialogue == null)
+                {
+                    dialogueGraph.startDialogue = dialogueDataNode;
+                }
+            });
+        }
 
         base.OnNodeEditorDataChange();
     }

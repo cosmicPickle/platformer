@@ -6,17 +6,21 @@ using UnityEngine.Events;
 [Serializable]
 public class DialogueDataNode : DataGraphNode {
 
-    public enum Type { Text, Question, Answer, Condition, StartDialogue, EndDialogue };
-    public enum Condition { None, HasItem, QuestStage }
+    public enum Type { Text, Question, Answer, Condition, StartDialogue, EndDialogue, OnTrue, OnFalse };
+    public enum Action { None, AddItem }
+    public enum Condition { None, HasItem }
 
     [SerializeField]
     public Type type;
     [SerializeField]
     public Condition condition;
     [SerializeField]
-    public string itemId;
+    public Action actionOnComplete;
+
     [SerializeField]
-    public string questStageId;
+    public Item conditionItem;
+    [SerializeField]
+    public Item actionItem;
     [SerializeField]
     public string text;
     

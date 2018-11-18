@@ -33,15 +33,16 @@ public class Node
         NodeBasedEditor editor
     )
     {
+        dataNode = newDataNode;
+        currentEditor = editor;
+
         SetStyles();
+        UpdateSize();
 
         rect = new Rect(position.x, position.y, width, height);       
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, OnClickInPoint);
         outPoint = new ConnectionPoint(this, ConnectionPointType.Out, OnClickOutPoint);
         OnRemoveNode = OnClickRemoveNode;
-
-        dataNode = newDataNode;
-        currentEditor = editor;
 
         if(dataNode.uiSettings != null)
         {
@@ -63,6 +64,10 @@ public class Node
     {
         inPoint.Draw();
         outPoint.Draw();
+
+        UpdateSize();
+        rect.width = width;
+        rect.height = height;
 
         GUILayout.BeginArea(rect, style);
         inspector.OnInspectorGUI();
@@ -137,6 +142,11 @@ public class Node
         selectedNodeStyle.padding = new RectOffset(12, 12, 12, 12);
 
         style = defaultNodeStyle;
+    }
+
+    protected virtual void UpdateSize()
+    {
+
     }
 
     private void ProcessContextMenu()

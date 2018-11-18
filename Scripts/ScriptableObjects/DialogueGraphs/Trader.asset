@@ -1,0 +1,721 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4895858704c7e4a8ce21317ac339cd, type: 3}
+  m_Name: Trader
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 114742602840088038}
+  - {fileID: 114587984650016384}
+  - {fileID: 114988256997706764}
+  - {fileID: 114865759518852192}
+  - {fileID: 114633287691992478}
+  - {fileID: 114844800343596384}
+  - {fileID: 114173827799983614}
+  - {fileID: 114735672469894108}
+  - {fileID: 114849165783810312}
+  - {fileID: 114970270902060026}
+  - {fileID: 114699825619358994}
+  - {fileID: 114691721074799126}
+  - {fileID: 114179487333617736}
+  - {fileID: 114622161531323192}
+  - {fileID: 114895770518264870}
+  - {fileID: 114414544162638322}
+  - {fileID: 114355208756632208}
+  - {fileID: 114074622613182092}
+  - {fileID: 114043018777616786}
+  - {fileID: 114882839302462512}
+  - {fileID: 114915220081744710}
+  - {fileID: 114149874949704582}
+  - {fileID: 114636823811084826}
+  - {fileID: 114057487504908240}
+  - {fileID: 114593561838439632}
+  nodeChildren:
+  - list:
+    - {fileID: 114587984650016384}
+  - list:
+    - {fileID: 114865759518852192}
+    - {fileID: 114988256997706764}
+  - list:
+    - {fileID: 114844800343596384}
+  - list:
+    - {fileID: 114633287691992478}
+  - list: []
+  - list:
+    - {fileID: 114173827799983614}
+    - {fileID: 114735672469894108}
+  - list:
+    - {fileID: 114699825619358994}
+  - list:
+    - {fileID: 114849165783810312}
+  - list:
+    - {fileID: 114970270902060026}
+  - list: []
+  - list:
+    - {fileID: 114691721074799126}
+  - list:
+    - {fileID: 114179487333617736}
+    - {fileID: 114622161531323192}
+    - {fileID: 114895770518264870}
+  - list:
+    - {fileID: 114414544162638322}
+  - list:
+    - {fileID: 114355208756632208}
+  - list:
+    - {fileID: 114074622613182092}
+  - list:
+    - {fileID: 114043018777616786}
+    - {fileID: 114882839302462512}
+  - list:
+    - {fileID: 114043018777616786}
+    - {fileID: 114882839302462512}
+  - list:
+    - {fileID: 114043018777616786}
+    - {fileID: 114882839302462512}
+  - list:
+    - {fileID: 114915220081744710}
+  - list:
+    - {fileID: 114149874949704582}
+  - list:
+    - {fileID: 114636823811084826}
+  - list:
+    - {fileID: 114057487504908240}
+    - {fileID: 114593561838439632}
+  - list: []
+  - list:
+    - {fileID: 114691721074799126}
+  - list:
+    - {fileID: 114636823811084826}
+  startDialogue: {fileID: 114742602840088038}
+--- !u!114 &114043018777616786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 8ca03221-afd0-470f-a074-232b41a6e708
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 233
+      y: 2551
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: I will take it.
+--- !u!114 &114057487504908240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: ebaa56e8-7542-4246-bbf6-a6551943f01f
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -211
+      y: 3076
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Let me see what you have again.
+--- !u!114 &114074622613182092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 9e484f0a-2923-4daf-a8dc-b79bb6d9dd25
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 808
+      y: 2267
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That would be 1 gold coin.
+--- !u!114 &114149874949704582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: a0c5fec8-c7c1-4d1a-897d-ea6fce3317a0
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 633
+      y: 2858
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That is unfortunate. Would you like to buy something else?
+--- !u!114 &114173827799983614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: aa34f0f3-4de0-45a5-b223-77a5dd16add0
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 426
+      y: 1169
+      width: 300
+      height: 220
+  type: 2
+  condition: 1
+  actionOnComplete: 0
+  conditionItem: {fileID: 11400000, guid: b9c10068c8dba084d857592b71dfe35a, type: 2}
+  actionItem: {fileID: 0}
+  text: Here it is.
+--- !u!114 &114179487333617736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2141e93b-d464-427f-8d36-6d0afa44435d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 1961
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Book of Mysteries
+--- !u!114 &114355208756632208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 6905af0d-e499-4575-8c2b-0a8d0a0ed65d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 444
+      y: 2268
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That will be 6 gold coins.
+--- !u!114 &114414544162638322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: f8955a0f-2028-4e7c-88a6-da59f7f0efb2
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 2270
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That will be 10 gold coins.
+--- !u!114 &114587984650016384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: be5018b0-c777-4e2d-aa6f-d66c85a1869f
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 970
+      y: 407
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Greetings, Traveler. What brings you to my humble store?
+--- !u!114 &114593561838439632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 6fc3ec3a-ce1a-43bb-bf19-d2fc3d400106
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 641
+      y: 3092
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Maybe another time.
+--- !u!114 &114622161531323192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 96f5cba7-a589-420b-ab44-c7da847c0ed4
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 443
+      y: 1959
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Silk of the North
+--- !u!114 &114633287691992478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 700aa68b-981b-4ed3-84c1-81d54fd98ac6
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1167
+      y: 920
+      width: 300
+      height: 125
+  type: 5
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114636823811084826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: d54cf8d0-de83-4af9-a949-7915b3f7c18a
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 3101
+      width: 300
+      height: 125
+  type: 5
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114691721074799126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 145201e7-20a2-487d-a8c2-87b6882d82c9
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 428
+      y: 1706
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: What would you like to buy?
+--- !u!114 &114699825619358994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 760fc236-54eb-4042-b629-ab3fff6a00a0
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 428
+      y: 1476
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That is great. Please, have a look.
+--- !u!114 &114735672469894108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2d568272-6ab1-48ab-88b9-cede6cbea18c
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 791
+      y: 1169
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: I seem to have misplaced it.
+--- !u!114 &114742602840088038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: de6f7cc4-cd98-42cb-a059-59e776418789
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 971
+      y: 234
+      width: 300
+      height: 125
+  type: 4
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114844800343596384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 45a6a0d3-df7b-4744-9932-8d2442557780
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 781
+      y: 921
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Of course. Could you show me your Trader's Mark.
+--- !u!114 &114849165783810312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 9d6b8f64-8006-40b4-85a7-8fe2ec64080e
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 793
+      y: 1476
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 'Really? You might want to go meet with the High Trader. For a new one. '
+--- !u!114 &114865759518852192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 919840f9-3806-454c-9244-4f2bbc6e02cd
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 1163
+      y: 649
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Nothing actually. Goodbye.
+--- !u!114 &114882839302462512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: fcc33896-db3e-4b48-90e9-80d276d6172d
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 629
+      y: 2559
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: That is a bit much for my pocket
+--- !u!114 &114895770518264870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: a143540d-de5c-4dfb-9af5-0088976b761b
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 802
+      y: 1955
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Fake Unicorn horn dust
+--- !u!114 &114915220081744710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 6e776f26-382a-4a1d-a241-0bf1b4a35681
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 2861
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Thank you for your business. Farewell.
+--- !u!114 &114970270902060026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: beb4aa08-7caa-45ce-bf46-094b317f41d3
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 793
+      y: 1719
+      width: 300
+      height: 125
+  type: 5
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114988256997706764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2b089ba7-f4ba-4fec-903b-0fda80a9d098
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 782
+      y: 645
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: I'd like to see your goods.

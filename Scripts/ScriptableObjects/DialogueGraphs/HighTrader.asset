@@ -9,92 +9,94 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee4895858704c7e4a8ce21317ac339cd, type: 3}
-  m_Name: New DialogueDataGraph
+  m_Name: HighTrader
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 114586905291894620}
-  - {fileID: 114971480287495548}
-  - {fileID: 114142632352741388}
-  - {fileID: 114198202031436182}
-  - {fileID: 114057809625676808}
-  - {fileID: 114179731147540096}
-  - {fileID: 114054495164990916}
-  - {fileID: 114685074876835306}
-  - {fileID: 114838025832043362}
-  - {fileID: 114206666487159784}
-  - {fileID: 114051511175303498}
-  - {fileID: 114679158311475872}
-  - {fileID: 114306223295042906}
-  - {fileID: 114915456779985142}
-  - {fileID: 114099448825265536}
-  - {fileID: 114181311839255976}
-  - {fileID: 114227773523275222}
-  - {fileID: 114455479695119532}
-  - {fileID: 114517451959377650}
-  - {fileID: 114340345403254528}
-  - {fileID: 114584940997616456}
-  - {fileID: 114613621082472860}
-  - {fileID: 114850210087227356}
-  - {fileID: 114536683964686820}
-  - {fileID: 114018613603819496}
-  - {fileID: 114699559456555310}
+  - {fileID: 114289139452788554}
+  - {fileID: 114078026901922954}
+  - {fileID: 114087563366195530}
+  - {fileID: 114533615323719144}
+  - {fileID: 114095520499233142}
+  - {fileID: 114721387353615048}
+  - {fileID: 114081843072412088}
+  - {fileID: 114667691040588190}
+  - {fileID: 114507266867808906}
+  - {fileID: 114659347194597490}
+  - {fileID: 114718203739511770}
+  - {fileID: 114756361588584392}
+  - {fileID: 114035914393523654}
+  - {fileID: 114970130568136430}
+  - {fileID: 114949948928428088}
+  - {fileID: 114930203013374808}
+  - {fileID: 114643996138247496}
+  - {fileID: 114561178613943522}
+  - {fileID: 114304152722258914}
+  - {fileID: 114478559040390950}
+  - {fileID: 114999926559297146}
+  - {fileID: 114244969347427442}
+  - {fileID: 114946704022673350}
+  - {fileID: 114508370486289554}
+  - {fileID: 114707538919678488}
+  - {fileID: 114136454374387880}
+  - {fileID: 114540925835545290}
   nodeChildren:
   - list:
-    - {fileID: 114971480287495548}
+    - {fileID: 114561178613943522}
   - list:
-    - {fileID: 114142632352741388}
+    - {fileID: 114087563366195530}
   - list:
-    - {fileID: 114198202031436182}
-    - {fileID: 114179731147540096}
-  - list:
-    - {fileID: 114838025832043362}
+    - {fileID: 114533615323719144}
   - list: []
   - list:
-    - {fileID: 114054495164990916}
+    - {fileID: 114721387353615048}
+    - {fileID: 114081843072412088}
   - list:
-    - {fileID: 114685074876835306}
+    - {fileID: 114667691040588190}
+  - list:
+    - {fileID: 114667691040588190}
+  - list:
+    - {fileID: 114659347194597490}
+  - list:
+    - {fileID: 114095520499233142}
+  - list:
+    - {fileID: 114718203739511770}
+  - list:
+    - {fileID: 114756361588584392}
+    - {fileID: 114035914393523654}
+  - list:
+    - {fileID: 114930203013374808}
+  - list:
+    - {fileID: 114970130568136430}
+  - list:
+    - {fileID: 114949948928428088}
   - list: []
   - list:
-    - {fileID: 114206666487159784}
-    - {fileID: 114051511175303498}
-    - {fileID: 114679158311475872}
-  - list:
-    - {fileID: 114099448825265536}
-  - list:
-    - {fileID: 114181311839255976}
-  - list:
-    - {fileID: 114227773523275222}
-  - list:
-    - {fileID: 114915456779985142}
+    - {fileID: 114643996138247496}
   - list: []
   - list:
-    - {fileID: 114517451959377650}
-    - {fileID: 114340345403254528}
+    - {fileID: 114078026901922954}
+    - {fileID: 114304152722258914}
   - list:
-    - {fileID: 114517451959377650}
-    - {fileID: 114340345403254528}
+    - {fileID: 114478559040390950}
   - list:
-    - {fileID: 114517451959377650}
-    - {fileID: 114340345403254528}
+    - {fileID: 114507266867808906}
+    - {fileID: 114999926559297146}
+  - list:
+    - {fileID: 114244969347427442}
+  - list:
+    - {fileID: 114946704022673350}
+    - {fileID: 114508370486289554}
+  - list:
+    - {fileID: 114707538919678488}
+  - list:
+    - {fileID: 114540925835545290}
+  - list:
+    - {fileID: 114136454374387880}
   - list: []
   - list:
-    - {fileID: 114306223295042906}
-  - list:
-    - {fileID: 114584940997616456}
-  - list:
-    - {fileID: 114850210087227356}
-  - list: []
-  - list:
-    - {fileID: 114536683964686820}
-    - {fileID: 114699559456555310}
-  - list:
-    - {fileID: 114018613603819496}
-  - list:
-    - {fileID: 114915456779985142}
-  - list:
-    - {fileID: 114838025832043362}
-  startDialogue: {fileID: 114586905291894620}
---- !u!114 &114018613603819496
+    - {fileID: 114136454374387880}
+  startDialogue: {fileID: 114289139452788554}
+--- !u!114 &114035914393523654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,44 +107,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 312745b9-0089-4c74-a947-43411729bbcd
+  nodeId: 32303525-56dc-4aa2-bf4e-e1855a79c6a3
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1151
-      y: 1351
+      x: -385
+      y: 1524
       width: 300
-      height: 115
-  type: 0
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: You won't find better prices anywhere. Come back if you change your mind.
---- !u!114 &114051511175303498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 19eb3be8-45c2-4f60-a5b0-ebabcabc898f
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1319
-      y: 267
-      width: 300
-      height: 115
+      height: 220
   type: 2
   condition: 0
-  itemId: 
-  questStageId: 
-  text: Silk from the south.
---- !u!114 &114054495164990916
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: I don't want to be a part of this.
+--- !u!114 &114078026901922954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,44 +132,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: eda6755b-1ba2-47bd-8d84-ab15403f7cc0
+  nodeId: 46ee26b6-6c4c-48d3-b1f1-a87ecf2a27b4
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1834
-      y: 62
+      x: -1167
+      y: -40
       width: 300
-      height: 115
-  type: 0
+      height: 125
+  type: 6
   condition: 0
-  itemId: 
-  questStageId: 
-  text: As you wish. Farewell.
---- !u!114 &114057809625676808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: db7f12e5-cc49-4302-b8c5-adf57df2f712
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1262
-      y: -518
-      width: 0
-      height: 0
-  type: 0
-  condition: 0
-  itemId: 
-  questStageId: 
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
   text: 
---- !u!114 &114099448825265536
+--- !u!114 &114081843072412088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,68 +157,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 8852f76c-1ef2-4f9e-a0bc-1e3dca9f5663
+  nodeId: f649b96a-4831-4b88-a2d8-f797c6167c40
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1001
-      y: 485
+      x: -470
+      y: 459
       width: 300
-      height: 115
-  type: 1
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: That would be 10 gold coins
---- !u!114 &114142632352741388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: e7867cc7-1531-436c-abde-8c884e06e662
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1646
-      y: -325
-      width: 300
-      height: 115
-  type: 1
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: Can I interest you in some top quality goods.
---- !u!114 &114179731147540096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 227c8a59-3e1e-4435-936f-0a6e89322f44
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1830
-      y: -108
-      width: 300
-      height: 115
+      height: 220
   type: 2
   condition: 0
-  itemId: 
-  questStageId: 
-  text: Not right now.
---- !u!114 &114181311839255976
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: How did you know?
+--- !u!114 &114087563366195530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,116 +182,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 3db705a6-0adf-4698-bf33-7906a8af198a
+  nodeId: 48826108-78ee-436f-86a0-d9a1a3841a48
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1329
-      y: 490
+      x: -1165
+      y: 134
       width: 300
-      height: 115
-  type: 1
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: That would be 12 gold coins.
---- !u!114 &114198202031436182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: ae7f55eb-4173-4c27-b963-d28df087d12d
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1479
-      y: -110
-      width: 300
-      height: 115
-  type: 2
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: Yes, show me what you've got.
---- !u!114 &114206666487159784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 9a4504ee-f63d-41a5-a544-9fe71d7281a8
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1002
-      y: 268
-      width: 300
-      height: 115
-  type: 2
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: Book of Mysteries.
---- !u!114 &114227773523275222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 57a04b3c-d0a5-4fd9-82ef-504aafbd53f9
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1674
-      y: 490
-      width: 300
-      height: 115
-  type: 1
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: That would be 8 silver coins
---- !u!114 &114306223295042906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 46d2c5fc-cacc-4f6f-afef-09b148ce6e49
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1557
-      y: 891
-      width: 300
-      height: 115
+      height: 155
   type: 0
   condition: 0
-  itemId: 
-  questStageId: 
-  text: Here you go. Thank you for your purchase. Farewell.
---- !u!114 &114340345403254528
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: There is nothing more I can help you with. If you'll excuse me, I have business
+    to attnend to.
+--- !u!114 &114095520499233142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,20 +208,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: f954a30b-d034-40a5-9da9-1551f308ed27
+  nodeId: 799254fd-2f32-4122-ba86-4150705e5e06
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1160
-      y: 693
+      x: -724
+      y: 252
       width: 300
-      height: 115
-  type: 2
+      height: 155
+  type: 1
   condition: 0
-  itemId: 
-  questStageId: 
-  text: That is a bit much for my pocket.
---- !u!114 &114455479695119532
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Are you looking for a Trader's Mark.
+--- !u!114 &114136454374387880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,20 +233,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: b12d50c4-601a-4694-ba26-f147b0b316a1
+  nodeId: 6e27f515-add0-4d4a-be32-8601598d1bfa
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 943
-      y: 467
-      width: 0
-      height: 0
-  type: 0
+      x: -81
+      y: 766
+      width: 300
+      height: 125
+  type: 5
   condition: 0
-  itemId: 
-  questStageId: 
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
   text: 
---- !u!114 &114517451959377650
+--- !u!114 &114244969347427442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,20 +258,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 527b0a25-8409-4928-ab82-f786565a0fd2
+  nodeId: 59915287-b268-4893-9ec0-1dcac9361ad5
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1548
-      y: 707
+      x: -204
+      y: 37
       width: 300
-      height: 115
-  type: 2
+      height: 155
+  type: 1
   condition: 0
-  itemId: 
-  questStageId: 
-  text: I'll take it.
---- !u!114 &114536683964686820
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Did you deliver the package?
+--- !u!114 &114289139452788554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,68 +283,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 97aefa36-3a9a-4bbd-8bc8-a8f37b8881a9
+  nodeId: 2b8396e4-e42a-4615-a553-4ba497b78043
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 791
-      y: 1218
+      x: -1066
+      y: -504
       width: 300
-      height: 115
-  type: 2
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: I am sorry, not right now.
---- !u!114 &114584940997616456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 32f1d9ba-5c2a-4be1-be81-c76ec0c4c704
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 703
-      y: 842
-      width: 300
-      height: 115
-  type: 0
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: 'As you wish. '
---- !u!114 &114586905291894620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 2da44584-f50c-4500-b72c-6909eb33894d
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1286
-      y: -507
-      width: 300
-      height: 115
+      height: 125
   type: 4
   condition: 0
-  itemId: 
-  questStageId: 
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
   text: 
---- !u!114 &114613621082472860
+--- !u!114 &114304152722258914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -537,44 +308,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: bba5290f-8261-4888-8ea7-02767a5db897
+  nodeId: cffc0696-7e30-4b64-a207-1b3a68c4c8fd
   uiSettings:
     rect:
       serializedVersion: 2
-      x: -27
-      y: 443
-      width: 0
-      height: 0
-  type: 0
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: 
---- !u!114 &114679158311475872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 4623d3cb-3977-444c-aa35-020dbcf07700
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1669
-      y: 269
+      x: -810
+      y: -349
       width: 300
-      height: 115
+      height: 125
+  type: 7
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114478559040390950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 5646edd5-ef54-47a5-9276-c4c72b19f4e7
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -732
+      y: -185
+      width: 300
+      height: 220
+  type: 3
+  condition: 1
+  actionOnComplete: 0
+  conditionItem: {fileID: 11400000, guid: f3aaeedb904414348ad3997a8263042a, type: 2}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114507266867808906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: e3601bbd-9d4d-4a91-9941-c9f1e7283a5e
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -730
+      y: 82
+      width: 300
+      height: 125
+  type: 7
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114508370486289554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: f9a6009e-8f6c-4df6-93c6-d15d076f3c63
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: 235
+      y: 249
+      width: 300
+      height: 220
   type: 2
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: Fake horn of Unicorn.
---- !u!114 &114685074876835306
+  condition: 1
+  actionOnComplete: 0
+  conditionItem: {fileID: 11400000, guid: 476d00ccc656f8d4ca62743b7a8eca49, type: 2}
+  actionItem: {fileID: 0}
+  text: Yes, she told me to give you this.
+--- !u!114 &114533615323719144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -585,20 +408,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 60b6950a-a48a-49c9-8f84-c36e1e372998
+  nodeId: 04a355b9-6553-4ddf-9fc7-4925510110c0
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 2020
-      y: 237
+      x: -1165
+      y: 333
       width: 300
-      height: 115
+      height: 125
   type: 5
   condition: 0
-  itemId: 
-  questStageId: 
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
   text: 
---- !u!114 &114699559456555310
+--- !u!114 &114540925835545290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -609,20 +433,199 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 8975d05a-d01c-408c-88ff-d24a2b3e3aa4
+  nodeId: 4f07e4ba-ea97-48dd-80ce-261b25cf60ba
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 355
-      y: 237
+      x: 240
+      y: 552
       width: 300
-      height: 115
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 1
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 11400000, guid: b9c10068c8dba084d857592b71dfe35a, type: 2}
+  text: Really? That is interesting! Now take this Trader's Mark and leave. I have
+    uugh... business to attend to. And if you tell anyonee about this you will never
+    trade in these lands again.
+--- !u!114 &114561178613943522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 93d45ae2-0203-4190-89b8-f6f6ab3ac863
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -1144
+      y: -346
+      width: 300
+      height: 220
+  type: 3
+  condition: 1
+  actionOnComplete: 0
+  conditionItem: {fileID: 11400000, guid: b9c10068c8dba084d857592b71dfe35a, type: 2}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114643996138247496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 955be3b2-e16f-4910-a787-4ab6c1ea2f39
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -743
+      y: 2032
+      width: 300
+      height: 125
+  type: 5
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114659347194597490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 0179a830-43bb-4b89-9436-6aa45f6492eb
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -630
+      y: 1012
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Normally, I decline requests such as this. However, it seems to be your lucky
+    day. I need someone that is not from around here for a personal favour.
+--- !u!114 &114667691040588190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: fd5259b6-1ee4-406a-9c25-6eed336d620e
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -633
+      y: 786
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Everybody wants to be a trader these days.
+--- !u!114 &114707538919678488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 9a31118e-aff8-47db-b14d-209264c8c6bc
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -78
+      y: 550
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Then what are you standing around here for? Go.
+--- !u!114 &114718203739511770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 2464e292-aff2-4731-8eb8-a47fbfac3b98
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -629
+      y: 1238
+      width: 300
+      height: 155
+  type: 1
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Can you be discrete?
+--- !u!114 &114721387353615048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: f3e0bea6-bb7f-4f2d-8b11-ac2ac184b0ed
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -805
+      y: 457
+      width: 300
+      height: 220
   type: 2
   condition: 0
-  itemId: 
-  questStageId: 
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
   text: Yes.
---- !u!114 &114838025832043362
+--- !u!114 &114756361588584392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -633,20 +636,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: edb39cb3-f325-4326-bdc6-7f1f8d3440a3
+  nodeId: f88de158-a8d7-4744-959a-505059337f81
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 1396
-      y: 83
+      x: -746
+      y: 1526
       width: 300
-      height: 115
-  type: 1
+      height: 220
+  type: 2
   condition: 0
-  itemId: 
-  questStageId: 
-  text: What would you like to buy?
---- !u!114 &114850210087227356
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: Of course.
+--- !u!114 &114930203013374808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,64 +661,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeId: 2b499cf0-1ec5-404e-9dbd-fce2fd672601
+  nodeId: 8cffacf5-3cdf-4912-bd53-9a7dc068bcec
   uiSettings:
     rect:
       serializedVersion: 2
-      x: 703
-      y: 1014
+      x: -744
+      y: 1814
       width: 300
-      height: 115
-  type: 1
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: Would you like to buy something else?
---- !u!114 &114915456779985142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: 8c8ea996-2912-455b-a20f-62936fe131b3
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1572
-      y: 1490
-      width: 300
-      height: 115
-  type: 5
-  condition: 0
-  itemId: 
-  questStageId: 
-  text: 
---- !u!114 &114971480287495548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeId: e8b33f6e-0343-42b9-aafd-251fb704a910
-  uiSettings:
-    rect:
-      serializedVersion: 2
-      x: 1289
-      y: -326
-      width: 300
-      height: 115
+      height: 155
   type: 0
   condition: 0
-  itemId: 
-  questStageId: 
-  text: Greetings, traveler.
+  actionOnComplete: 1
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 11400000, guid: f3aaeedb904414348ad3997a8263042a, type: 2}
+  text: There is a Maid that works for the Baroness. Take this package to her and
+    then com back to me.
+--- !u!114 &114946704022673350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: d578fb90-ccc8-4739-b57c-4b076d5e4bed
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -77
+      y: 251
+      width: 300
+      height: 220
+  type: 2
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: No, not yet.
+--- !u!114 &114949948928428088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 319b4ca2-d001-47b5-b3ee-47fde0607f00
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -379
+      y: 2029
+      width: 300
+      height: 125
+  type: 5
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 
+--- !u!114 &114970130568136430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: 34d85a25-0cfd-4c5c-8c38-c3f51d8eef25
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -377
+      y: 1820
+      width: 300
+      height: 155
+  type: 0
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: And here I thought we can help each other. Farewell.
+--- !u!114 &114999926559297146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115c93007b2cc9469c8f4d35888689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeId: a1cbd6c1-811e-4933-a193-16b11d062605
+  uiSettings:
+    rect:
+      serializedVersion: 2
+      x: -375
+      y: -122
+      width: 300
+      height: 125
+  type: 6
+  condition: 0
+  actionOnComplete: 0
+  conditionItem: {fileID: 0}
+  actionItem: {fileID: 0}
+  text: 

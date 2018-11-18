@@ -15,7 +15,9 @@ public class DialogueDataNodeEditor : Editor
 
         if (dNode.type != DialogueDataNode.Type.Condition 
             && dNode.type != DialogueDataNode.Type.StartDialogue 
-            && dNode.type != DialogueDataNode.Type.EndDialogue)
+            && dNode.type != DialogueDataNode.Type.EndDialogue
+            && dNode.type != DialogueDataNode.Type.OnFalse
+            && dNode.type != DialogueDataNode.Type.OnTrue)
         {
             EditorGUILayout.LabelField("Text");
             dNode.text = EditorGUILayout.TextArea(dNode.text);
@@ -28,16 +30,18 @@ public class DialogueDataNodeEditor : Editor
 
             if (dNode.condition == DialogueDataNode.Condition.HasItem)
             {
-                EditorGUILayout.LabelField("ItemID");
-                dNode.itemId = EditorGUILayout.TextField(dNode.itemId);
+                EditorGUILayout.LabelField("Item");
+                dNode.conditionItem = EditorGUILayout.ObjectField(dNode.conditionItem, typeof(Item)) as Item;
             }
+        }
 
-            if (dNode.condition == DialogueDataNode.Condition.QuestStage)
-            {
-                EditorGUILayout.LabelField("QuestStageID");
-                dNode.questStageId = EditorGUILayout.TextField(dNode.questStageId);
-                EditorGUI.EndDisabledGroup();
-            }
+        EditorGUILayout.LabelField("Action on Complete");
+        dNode.actionOnComplete = (DialogueDataNode.Action)EditorGUILayout.EnumPopup(dNode.actionOnComplete);
+
+        if (dNode.actionOnComplete == DialogueDataNode.Action.AddItem)
+        {
+            EditorGUILayout.LabelField("Item");
+            dNode.actionItem = EditorGUILayout.ObjectField(dNode.actionItem, typeof(Item)) as Item;
         }
     }
 }
